@@ -1,0 +1,135 @@
+@import 'variables';
+@import 'utilities';
+
+body{
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 200;
+   color: $light-color;
+   overflow-x: hidden;
+
+   .main-container{
+      max-width: 1100px;
+      margin:1.5rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .disp-box{
+         width:40%;
+         text-align: center;
+         padding:1.5rem 2rem;
+         border-radius: 0.25rem;
+         background:$primary-color;
+
+         ul{
+            margin-top:0.5rem;
+            border-radius:2px;
+            font-weight:400;
+            color:$dark-color;
+            background:$light-color;
+            
+            li{
+               padding:0.5rem;
+
+               &:not(:last-child){
+                  border-bottom:0.01rem solid $dark-color;
+               }
+            }
+         }
+
+         .change-btn{
+            color:$light-color;            
+            background: $secondary-color;
+            border:1px solid $primary-color;
+
+            &:hover{
+               cursor:pointer;
+               color:$secondary-color;
+               background: $light-color;
+            }
+         }
+
+      }
+
+      .modal-box{
+         position: absolute;
+         top:1.5rem;
+         width:30%;
+         border-radius: 2px;
+         background:$dark-color;
+         transform: scale(0,0);
+         transition: transform 0.25s ease-in-out;
+
+         &.show-modal{
+            transform: scale(1,1);
+         }
+
+         &.close-modal{
+            transform: scale(0,0);
+         }
+         
+         .modal-head{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color:$primary-color;
+            padding: 0.5rem 0.75rem;
+            border-bottom:1px solid $light-color;
+
+            i{
+               font-size:1.5rem;
+
+               &:hover{
+                  cursor: pointer;
+               }
+            }
+         }
+
+         .modal-body{
+            padding:0.75rem;
+            border-bottom:1px solid $light-color;
+
+            form{
+               font-size: 1.1rem;
+               display: flex;
+               flex-direction: column;
+   
+               label{
+                  margin-bottom:0.2rem;
+               }
+
+               input{
+                  padding:0.25rem;
+                  margin-bottom:0.5rem;
+                  outline:none;
+                  border:1px solid $light-color;
+
+                  &:focus{
+                     border:1px solid $primary-color;
+                  }
+               }
+            }
+         }
+
+         .modal-foot{
+            padding:0rem 0.75rem 0.6rem 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .save-btn{
+               color:$light-color;
+               background: $primary-color;
+               border:1px solid $primary-color;
+
+               &:hover{
+                  cursor: pointer;
+                  color:$primary-color;
+                  background:$light-color;
+                  border:1px solid $light-color;
+               }
+            }
+         }
+      }
+   }
+}
